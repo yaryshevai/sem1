@@ -25,6 +25,7 @@ private:
     steady_clock::time_point point2;
 };
 
+
 int main() {
     auto result = 0.;
     {
