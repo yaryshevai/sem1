@@ -18,7 +18,7 @@ void search_by_surname(std::string surname)
 int get_random_number(int max){
     auto current_timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
     auto generator = std::mt19937_64(current_timestamp);
-    auto distribution = std::uniform_int_distribution(1, max-1);
+    auto distribution = std::uniform_int_distribution(0, max-1);
     return distribution(generator);
 }
 void get_random(){
