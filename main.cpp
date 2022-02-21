@@ -34,6 +34,7 @@ int main() {
         for(auto i = 0u; i < 1'000'000u; i++) {
             result += sin(i) * cos(i);
         }
+
     }
     {
         Timer<microseconds> t;
