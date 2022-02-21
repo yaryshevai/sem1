@@ -49,7 +49,6 @@ public:
 
 private:
     std::multimap<std::string, int> map;
-
 };
 
 int main(){
