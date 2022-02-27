@@ -73,10 +73,10 @@ int main(){
     std::cout << "11) " << numbers2 << std::endl;
     //ex12
     std::vector<int> numbers3;
-    std::transform(RANGE(numbers), std::begin(numbers2), std::back_inserter(numbers3), [](auto lhs, auto rhs) {return lhs - rhs;});
+    std::transform(RANGE(numbers), std::begin(numbers2), std::back_inserter(numbers3), [](auto lhs, auto rhs) {return lhs-rhs;});
     std::cout << "12) " << numbers3 << std::endl;
     //ex13
-    std::replace_if(RANGE(numbers3), [](auto number){return number < 0;}, 0);
+    std::replace_if(RANGE(numbers3),[](auto number){return number<0;}, 0);
     std::cout << "13) " << numbers3 << std::endl;
     //ex14
     numbers3.erase(std::remove_if(RANGE(numbers3),[](auto number){return number==0;}),std::end(numbers3));
