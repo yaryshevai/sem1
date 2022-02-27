@@ -57,8 +57,7 @@ int main(){
     std::cout<< "7) "<< *find_if(RANGE(numbers),Prime) << std::endl;
     //ex8
     std::vector<int> squares;
-    std::transform(RANGE(numbers), std::begin(numbers),
-                   [](auto number) {return number*number;});
+    std::transform(RANGE(numbers), std::begin(numbers),[](auto number) {return number*number;});
     std::cout<< "8) "<< numbers << std::endl;
     //ex9
     auto current_timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
