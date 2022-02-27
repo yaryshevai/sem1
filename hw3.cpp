@@ -8,9 +8,9 @@
 
 #define RANGE(container) std::begin(container), std::end(container)
 
-bool IsOdd(int i) {return ((i%2)==1);}
+bool IsOdd(int i){return ((i%2)==1);}
 
-constexpr auto prime(unsigned number){
+constexpr auto Prime(unsigned number){
     unsigned n = number;
     if(n == 1){return false;}
     for(unsigned i = 2u; i <= number / 2;){
@@ -55,12 +55,12 @@ int main(){
     //ex6
     std::cout<< "6) " <<*std::min_element(RANGE(numbers))<<" "<<*std::max_element(RANGE(numbers))<<std::endl;
     //ex7
-    std::cout<< "7) "<< *find_if(RANGE(numbers),prime) << std::endl;
+    std::cout<< "7) "<< *find_if(RANGE(numbers),Prime) << std::endl;
     //ex8
     std::vector<int> squares;
-    std::transform(RANGE(numbers), std::back_inserter(squares),
+    std::transform(RANGE(numbers), std::begin(numbers),
                    [](auto number) {return number*number;});
-    std::cout<< "8) "<< squares << std::endl;
+    std::cout<< "8) "<< numbers << std::endl;
     //ex9
     auto current_timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
     auto generator = std::mt19937_64(current_timestamp);
