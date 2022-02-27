@@ -47,8 +47,7 @@ int main(){
     std::cout<< "3) " << numbers << std::endl;
     //ex4
     std::sort(RANGE(numbers));
-    std::unique(RANGE(numbers));
-    numbers.erase(std::max_element(RANGE(numbers))+1,std::end(numbers));
+    numbers.erase(std::unique(RANGE(numbers)),std::end(numbers));
     std::cout<< "4) "<< numbers << std::endl;
     //ex5
     std::cout<< "5) "<<std::count_if(RANGE(numbers),IsOdd) << std::endl;
@@ -64,7 +63,7 @@ int main(){
     //ex9
     auto current_timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
     auto generator = std::mt19937_64(current_timestamp);
-    auto distribution = std::uniform_int_distribution(1, 10);
+    auto distribution = std::uniform_int_distribution(1, 100);
     std::vector<int> numbers2;
     std::generate_n(std::back_inserter(numbers2), std::size(numbers), [&distribution, &generator](){return distribution(generator);});
     std::cout << "9) " << numbers2 << std::endl;
@@ -90,7 +89,7 @@ int main(){
     std::vector<int> copy;
     //не думаю, что это то, что подразумевалось в задании :(((
     std::copy(RANGE(numbers3),std::back_inserter(copy));
-    std::sort(RANGE(copy));
+    std::sort(RANGE(copy), [](int lhs, int rhs) {return lhs>rhs;});
     std::cout << "16) " << copy[0] <<" "<< copy[1] << " " << copy[2] <<std::endl;
     //ex17
     std::sort(RANGE(numbers));
